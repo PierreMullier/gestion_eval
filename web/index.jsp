@@ -46,7 +46,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></
 </head>
 <body>
 <div class="text-center">
-<h1 class="text-info">Bonjour Index</h1>
+<h1 class="text-info">Bonjour</h1>
 </div>
 
 

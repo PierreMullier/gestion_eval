@@ -38,7 +38,7 @@
     <body>
         <ul class="nav blue-gradient lighten-3 py-4 mb-4 font-weight-bold z-depth-1 nav-fill w-100">
       <li class="nav-item">
-        <a class="nav-link active white-text" href="profil">Home</a>
+        <a class="nav-link active white-text" href="home">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link white-text" href="Cetudiants">Création Etudiant</a>
