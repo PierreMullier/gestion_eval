@@ -46,7 +46,11 @@ public static int getONE(String nom,String prenom, String mail, String mdp) thro
         prepare.execute();
         ResultSet rs =state.executeQuery(sql);
         
-        return rs.getInt("idEtudiants");
+        
+        int w =0;    
+        int i = rs.getInt("idEtudiants");
+        
+        return i;
     }
 
 public static List<Etudiants> getAll() throws SQLException{
