@@ -83,7 +83,6 @@ public class ModulesServlet extends HttpServlet {
         
         try {
             ModuleDao.insertModule(m);
-            request.setAttribute("msg", "Module crée !");
         } catch (SQLException e) {
             PrintWriter out = response.getWriter();
             out.print("exc " + e.getMessage());

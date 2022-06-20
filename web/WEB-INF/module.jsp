@@ -37,20 +37,15 @@
     <body>
      <%@include file="menu.jsp"%>
      <%@include file="menuModle.jsp"%>  
-           
-    <center>
-    <form action="module" method="POST" style = "width:800px">    
-    <div class="form-group" style="text-align: center">
-    <label style="font-size:25px" for="exampleFormControlTextarea1">Module à ajouter</label>
-    <textarea name="nomModule" class="form-control z-depth-1" id="exampleFormControlTextarea1" rows="3" cols ="2" placeholder="Ajouter le module ici..."></textarea>
+            
+  <form action="module" method="POST">
+  <div class="form-group">
+    <label  for="exampleFormControlTextarea1">Nom de module</label>
+    <textarea name="nomModule" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
     
     <button type="submit" class="btn btn-primary">Créer</button>
-    <p style="color:red">${msg}</p>
-     
-
-    </form>
-    </center>
+</form>
     </body>
 </html>
  
