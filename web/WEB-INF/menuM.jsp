@@ -43,9 +43,6 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></
 <li class="nav-item">
 <a class="nav-link white-text" href="Cetudiants">Création d'un étudiant</a>
 </li>
-<li class="nav-item">
-<a class="nav-link white-text" href="SEtudiants">Ajout/retrait d'un étudiant a une session</a>
-</li>
 </ul>
 </body>
 </html>
