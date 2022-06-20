@@ -33,21 +33,20 @@ public class EtudiantsDao {
         prepare.execute();
         
     }
-public static Etudiants getONE(String nom) throws SQLException{
+public static int getONE(String nom,String prenom, String mail, String mdp) throws SQLException{
 
-        String sql ="SELECT * FROM Etudiants WHERE";
+        String sql ="SELECT * FROM etudiants WHERE nom =? AND prenom=? AND mail=? AND password =? ";
         Connection connection = AccessDb.getConnection();
         PreparedStatement prepare = connection.prepareStatement(sql);
         Statement state =connection.createStatement();
-        prepare.setString(1,nom);
+        prepare.setString(1, nom);
+        prepare.setString(2, prenom);
+        prepare.setString(3, mail);
+        prepare.setString(4, mdp);
         prepare.execute();
         ResultSet rs =state.executeQuery(sql);
-            Etudiants u = new Etudiants();
-            u.setNom(rs.getString("nom"));
-            u.setPrenom(rs.getString("prenom"));
-            u.setMail(rs.getString("mail"));
-            u.setPassword(rs.getString("mdp"));
-        return u;
+        
+        return rs.getInt("idEtudiants");
     }
 
 public static List<Etudiants> getAll() throws SQLException{
@@ -66,5 +65,6 @@ users.add(e);
 }
 return users;
 }
-    
+
+
 }

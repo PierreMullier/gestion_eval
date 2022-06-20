@@ -6,8 +6,11 @@
 package fr.solutec.servlet;
 
 import fr.solutec.dao.EtudiantsDao;
+import static fr.solutec.dao.EtudiantsDao.getONE;
 import static fr.solutec.dao.EtudiantsDao.insertEtudiants;
 import fr.solutec.dao.SessionDao;
+import static fr.solutec.dao.SessionDao.getOneSession;
+import static fr.solutec.dao.SessionEtudiants.insertSessionEtu;
 import fr.solutec.model.Etudiants;
 import fr.solutec.model.Sessions;
 import java.io.IOException;
@@ -96,7 +99,7 @@ public class EtudiantsCServlet extends HttpServlet {
         String prenom = request.getParameter("prenom");
         String mail = request.getParameter("mail");
         String mdp = request.getParameter("mdp");
-        
+        String[] sessions = request.getParameterValues("pickersessions");
         try {
             Etudiants p = new Etudiants();
             p.setMail(mail);
@@ -105,6 +108,15 @@ public class EtudiantsCServlet extends HttpServlet {
             p.setPrenom(prenom);
             
             insertEtudiants(p);
+            int i=0;
+            int idEtu =getONE(nom, prenom, mail, mdp);
+            int j=0;
+            for(String s:sessions){
+              int idSes = getOneSession(s);
+              insertSessionEtu(idSes,idEtu);
+              int k=0;
+            }
+            
         } catch (Exception e) {
             PrintWriter out = response.getWriter();
             out.print("exc " + e.getMessage());

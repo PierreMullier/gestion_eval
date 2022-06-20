@@ -7,6 +7,7 @@ package fr.solutec.dao;
 
 import fr.solutec.model.Sessions;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,5 +34,13 @@ public class SessionDao {
         }
         return sessions;
     }
-    
+    public static int getOneSession(String nom)throws SQLException{
+        String sql ="SELECT UNIQUE * FROM sessions WHERE nom=?";
+        Connection connexion =AccessDb.getConnection();
+        Statement state = connexion.createStatement();
+        PreparedStatement prepare = connexion.prepareStatement(sql);
+        prepare.setString(1, nom);
+        ResultSet rs = state.executeQuery(sql);
+        return rs.getInt("idsessions");
+    }
 }
